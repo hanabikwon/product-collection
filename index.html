@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gyeongran Kwon</title>
+  <meta name="description" content="아이디어가 현실이 되는 순간을 좋아합니다. 그래서 만듭니다. 배우고, 시도하고, 실패하고, 다시 시작합니다.">
+  <meta property="og:title" content="Gyeongran Kwon">
+  <meta property="og:description" content="아이디어가 현실이 되는 순간을 좋아합니다. 그래서 만듭니다. 배우고, 시도하고, 실패하고, 다시 시작합니다.">
+  <meta property="og:image" content="icon.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #000;
+      --white: #fff;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --accent: #ff4d4d;
+      --border: 3px solid var(--black);
+    }
+
+    body {
+      font-family: 'Space Mono', 'Courier New', monospace;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--black);
+      text-decoration: none;
+    }
+
+    a:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* HERO */
+    .hero {
+      border-bottom: var(--border);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      margin-bottom: 10px;
+    }
+
+    .hero .title {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: var(--gray);
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      padding: 10px 20px;
+      border: var(--border);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: all 0.1s;
+    }
+
+    .contact-links a:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 var(--black);
+    }
+
+    /* SECTION */
+    .section {
+      border-bottom: var(--border);
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      color: var(--gray);
+    }
+
+    /* PROJECT CARD */
+    .project {
+      border: var(--border);
+      margin-bottom: 30px;
+      background: var(--white);
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-header {
+      border-bottom: var(--border);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-number {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .project-meta {
+      text-align: right;
+    }
+
+    .project-meta .platform {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .project-meta .timeline {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    .project-body {
+      padding: 20px;
+    }
+
+    .project-title {
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .project-subtitle {
+      font-size: 1rem;
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .project-desc {
+      margin-bottom: 20px;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .grid-item {
+      border: 2px solid var(--black);
+      padding: 15px;
+    }
+
+    .grid-item h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray);
+      margin-bottom: 8px;
+    }
+
+    .grid-item p {
+      font-size: 0.9rem;
+    }
+
+    /* TAGS */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 15px 0;
+    }
+
+    .tag {
+      padding: 5px 12px;
+      border: 2px solid var(--black);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    /* FEEDBACK */
+    .feedback {
+      background: var(--light-gray);
+      padding: 15px;
+      margin: 10px 0;
+      border-left: 4px solid var(--black);
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    /* CTA */
+    .project-cta {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 2px dashed var(--black);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: var(--border);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      background: var(--black);
+      color: var(--white);
+      cursor: pointer;
+      transition: all 0.1s;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 var(--black);
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* FEATURES LIST */
+    .features {
+      list-style: none;
+      margin: 15px 0;
+    }
+
+    .features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 0.9rem;
+    }
+
+    .features li:last-child {
+      border-bottom: none;
+    }
+
+    .features li::before {
+      content: "→ ";
+      font-weight: 700;
+    }
+
+    /* WHAT I DID */
+    .role-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--black);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .project-meta {
+        text-align: left;
+      }
+
+      .contact-links {
+        flex-direction: column;
+      }
+
+      .contact-links a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--gray); margin-bottom: 10px;">Portfolio</p>
+    <h1>Gyeongran Kwon</h1>
+    <p class="title">두근두근 만드는 사람</p>
+    <p class="tagline">
+      아이디어가 현실이 되는 순간을 좋아합니다.<br>그래서 만듭니다.<br>배우고, 시도하고, 실패하고, 다시 시작합니다.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:hanabikwon@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/gyeongran-kwon/" target="_blank">LinkedIn</a>
+      <a href="https://give-it-a-shot.site/tag/note/" target="_blank">Blog</a>
+    </div>
+  </header>
+
+  <!-- PROJECTS -->
+  <section class="section">
+    <div class="container">
+      <p class="section-title">Projects</p>
+
+      <!-- PROJECT 1: Year Log (최신) -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-number">01</span>
+          <div class="project-meta">
+            <p class="platform">Web</p>
+            <p class="timeline">2025.12 배포 · 실 작업 2일</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <img src="2025year-log-icon.png" alt="Year Log" style="width: 96px; height: 96px; border-radius: 16px; margin-bottom: 15px;">
+          <h2 class="project-title">Year Log</h2>
+          <p class="project-subtitle">2025 연말결산 — 한 해를 천천히 돌아볼 시간</p>
+
+          <div class="grid">
+            <div class="grid-item">
+              <h4>Problem</h4>
+              <p>한 해가 끝나갈 때, 막연히 지나간 시간을 정리하고 싶지만 어디서부터 시작해야 할지 모르겠다.</p>
+            </div>
+            <div class="grid-item">
+              <h4>Solution</h4>
+              <p>20개의 질문으로 한 해를 돌아보고, AI가 나만의 이야기로 정리해주는 연말결산 테스트.</p>
+            </div>
+            <div class="grid-item">
+              <h4>Concept</h4>
+              <p>바느질한 집, 편지와 우체통, 눈 내리는 효과. 하트로 만족도 표시. 따뜻한 핸드메이드 무드로 한 해를 포근하게 마무리.</p>
+            </div>
+          </div>
+
+          <span class="role-badge">Solo · 기획 → 디자인 → 개발 → 배포</span>
+
+          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">KEY FEATURES</h4>
+          <ul class="features">
+            <li>20문항 연말 회고 질문</li>
+            <li>AI 분석 (총평, 감정, 성장, 취향, 응원)</li>
+            <li>결과 공유 (카카오톡, 링크)</li>
+            <li>이미지 저장</li>
+          </ul>
+
+          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">TECH STACK</h4>
+          <div class="tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Vercel</span>
+          </div>
+
+          <div class="project-cta">
+            <a href="https://www.stitch-planet.com/" target="_blank" class="btn">바로가기</a>
+            <a href="https://www.stitch-planet.com/result/24qhy2" target="_blank" class="btn btn-outline">결과 예시</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: Recipesoup -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-number">02</span>
+          <div class="project-meta">
+            <p class="platform">iOS & Android</p>
+            <p class="timeline">2025.10 출시 · 약 5주</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <img src="recipesoup-icon.png" alt="Recipesoup" style="width: 64px; height: 64px; border-radius: 12px; margin-bottom: 15px;">
+          <h2 class="project-title">Recipesoup</h2>
+          <p class="project-subtitle">요리하는 사람을 위한 감성 레시피 아카이빙 앱</p>
+
+          <div class="grid">
+            <div class="grid-item">
+              <h4>Problem</h4>
+              <p>정성스레 만든 요리를 나만의 레시피로 기록하고 싶은데, 여기저기 흩어져서 찾기 어렵고 정리하기도 번거롭다.</p>
+            </div>
+            <div class="grid-item">
+              <h4>Solution</h4>
+              <p>AI로 쉽게 기록하고, 흩어진 레시피를 한 곳에 모으고, 요리하는 마음도 함께 담는 감성적인 UX.</p>
+            </div>
+            <div class="grid-item">
+              <h4>Concept</h4>
+              <p>토끼 세계관. 견습생에서 시작해 경험을 쌓고, 시그니처 요리를 만들고, 셰프가 되어 나만의 레스토랑을 여는 32단계 성장 스토리.</p>
+            </div>
+          </div>
+
+          <span class="role-badge">Solo · 기획 → 디자인 → 개발 → 배포</span>
+
+          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">KEY FEATURES</h4>
+          <ul class="features">
+            <li>퀵레시피: 요리명만 입력하면 끝</li>
+            <li>냉장고 털기: 남은 재료로 추천</li>
+            <li>링크 가져오기: 블로그 레시피 요약</li>
+            <li>사진 분석: 완성 요리 역추적</li>
+            <li>토끼굴: 32단계 게이미피케이션 성장 시스템</li>
+          </ul>
+
+          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">TECH STACK</h4>
+          <div class="tags">
+            <span class="tag">Flutter</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Vercel</span>
+          </div>
+
+          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">USER FEEDBACK</h4>
+          <div class="feedback">
+            "레시피 아카이빙도 가능한데 내 감정을 기록하는 일기의 용도로도 적절해서, 어떤 목적으로 써도 좋은 앱"
+          </div>
+          <div class="feedback">
+            "지루한 삶 속에서 하루를 기록하는 참신한 어플... 퀘스트를 깨듯 토끼굴을 늘려나가는 재미도 좋습니다."
+          </div>
+          <div class="feedback">
+            "디자인도 귀엽고 예쁘고 레시피 어플 중에 가장 신박하고 좋은 것 같아요."
+          </div>
+
+          <div class="project-cta">
+            <a href="https://hanabikwon.github.io/recipesoup_app_download/" target="_blank" class="btn">앱 다운로드</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Built with hands and heart.<br>© 2025 Gyeongran Kwon</p>
+  </footer>
+
+</body>
+</html>
