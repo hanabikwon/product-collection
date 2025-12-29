@@ -354,10 +354,61 @@
     <div class="container">
       <p class="section-title">Projects</p>
 
-      <!-- PROJECT 1: Year Log (최신) -->
+      <!-- PROJECT 1: DIFF (최신) -->
       <article class="project">
         <div class="project-header">
           <span class="project-number">01</span>
+          <div class="project-meta">
+            <p class="platform">Web · PWA</p>
+            <p class="timeline">2025.12 배포 · 3-5일</p>
+          </div>
+        </div>
+        <div class="project-body">
+          <img src="diff-icon.png" alt="DIFF" style="width: 96px; height: 96px; border-radius: 16px; margin-bottom: 15px;">
+          <h2 class="project-title">DIFF</h2>
+          <p class="project-subtitle">시간감각 조정 타이머 — Expected vs Actual</p>
+
+          <div class="grid">
+            <div class="grid-item">
+              <h4>Problem</h4>
+              <p>"30분이면 될 거 같은데..." → 2시간 걸림. 시간 예측이 계속 틀리면 일정이 꼬이고 자책하게 된다.</p>
+            </div>
+            <div class="grid-item">
+              <h4>Solution</h4>
+              <p>예상 시간과 실제 시간을 기록하고 비교하여 자신만의 시간감각 패턴을 분석. 과소평가/과대평가 경향을 파악.</p>
+            </div>
+            <div class="grid-item">
+              <h4>Concept</h4>
+              <p>시간의 명확성을 디자인에 반영. 데이터 중심의 직관적인 UI.</p>
+            </div>
+          </div>
+
+          <span class="role-badge">Solo · 기획 → 디자인 → 개발 → 배포</span>
+
+          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">KEY FEATURES</h4>
+          <ul class="features">
+            <li>예상/실제 시간 비교 타이머</li>
+            <li>카테고리별 통계 분석</li>
+            <li>시간감각 패턴 파악</li>
+          </ul>
+
+          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">TECH STACK</h4>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">PWA</span>
+          </div>
+
+          <div class="project-cta">
+            <a href="https://diff-timer.app" target="_blank" class="btn">바로가기</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: Year Log -->
+      <article class="project">
+        <div class="project-header">
+          <span class="project-number">02</span>
           <div class="project-meta">
             <p class="platform">Web</p>
             <p class="timeline">2025.12 배포 · 실 작업 2일</p>
@@ -404,73 +455,6 @@
           <div class="project-cta">
             <a href="https://www.stitch-planet.com/" target="_blank" class="btn">바로가기</a>
             <a href="https://www.stitch-planet.com/result/24qhy2" target="_blank" class="btn btn-outline">결과 예시</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 2: DIFF -->
-      <article class="project">
-        <div class="project-header">
-          <span class="project-number">02</span>
-          <div class="project-meta">
-            <p class="platform">Web · PWA</p>
-            <p class="timeline">2025.12 배포 · 약 2주</p>
-          </div>
-        </div>
-        <div class="project-body">
-          <img src="diff-icon.png" alt="DIFF" style="width: 96px; height: 96px; border-radius: 16px; margin-bottom: 15px;">
-          <h2 class="project-title">DIFF</h2>
-          <p class="project-subtitle">시간감각 조정 타이머 — Expected vs Actual</p>
-
-          <div class="grid">
-            <div class="grid-item">
-              <h4>Problem</h4>
-              <p>"30분이면 될 거 같은데..." → 2시간 걸림. 시간 예측이 계속 틀리면 일정이 꼬이고 자책하게 된다.</p>
-            </div>
-            <div class="grid-item">
-              <h4>Solution</h4>
-              <p>예상 시간과 실제 시간을 기록하고 비교하여 자신만의 시간감각 패턴을 분석. 과소평가/과대평가 경향을 파악.</p>
-            </div>
-            <div class="grid-item">
-              <h4>Concept</h4>
-              <p>Brutalism 디자인. 검은 테두리, Space Mono 폰트, 최소한의 색상. 데이터 중심의 직관적이고 날카로운 UI.</p>
-            </div>
-          </div>
-
-          <span class="role-badge">Solo · 기획 → 디자인 → 개발 → 배포</span>
-
-          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">KEY FEATURES</h4>
-          <ul class="features">
-            <li>예상 시간 입력 후 타이머 시작 (최대 12시간)</li>
-            <li>실제 작업 시간 자동 기록</li>
-            <li>WORK/LIFE 카테고리별 통계 분석</li>
-            <li>Full Analysis Mode: 소요시간별/카테고리별 편향 분석</li>
-            <li>Google OAuth 로그인 & 자동 클라우드 백업</li>
-            <li>PWA 지원 (홈 화면 추가 가능)</li>
-          </ul>
-
-          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">TECH STACK</h4>
-          <div class="tags">
-            <span class="tag">React 19</span>
-            <span class="tag">Vite</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">Google OAuth</span>
-            <span class="tag">GA4</span>
-            <span class="tag">PWA</span>
-            <span class="tag">Vercel</span>
-          </div>
-
-          <h4 style="margin-top: 20px; font-size: 0.85rem; color: var(--gray);">TECHNICAL HIGHLIGHTS</h4>
-          <ul class="features">
-            <li>RLS (Row Level Security) 기반 보안</li>
-            <li>Edge Function으로 7일 자동 삭제 (Cron Job)</li>
-            <li>iOS 백그라운드 복원 (localStorage 기반)</li>
-            <li>5시간 경과 알림, 12시간 자동 완료</li>
-            <li>Brutalism 디자인 시스템 구현</li>
-          </ul>
-
-          <div class="project-cta">
-            <a href="https://diff-timer.app" target="_blank" class="btn">바로가기</a>
           </div>
         </div>
       </article>
